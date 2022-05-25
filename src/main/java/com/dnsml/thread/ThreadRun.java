@@ -17,13 +17,30 @@ public class ThreadRun {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 2, 41, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<>(5), new ThreadPoolExecutor.DiscardOldestPolicy());
 
+
+
+        threadPoolExecutor.submit(new RunableTask());
+        threadPoolExecutor.submit(new RunableTask());
+        threadPoolExecutor.submit(new RunableTask());
+        threadPoolExecutor.submit(new RunableTask());
+        threadPoolExecutor.submit(new RunableTask());
+        threadPoolExecutor.submit(new RunableTask());
+        threadPoolExecutor.submit(new RunableTask());
+        threadPoolExecutor.submit(new RunableTask());
+
+//        excute()只能用与runnable实现
         threadPoolExecutor.execute(new RunableTask());
-        threadPoolExecutor.execute(new RunableTask());
-        threadPoolExecutor.execute(new RunableTask());
-        threadPoolExecutor.execute(new RunableTask());
-        threadPoolExecutor.execute(new RunableTask());
-        threadPoolExecutor.execute(new RunableTask());
-        threadPoolExecutor.execute(new RunableTask());
+
+//        submit()runnable 和callable都可以
+        threadPoolExecutor.submit(new CallableTask());
+        threadPoolExecutor.submit(new RunableTask());
+
+//        threadPoolExecutor.execute(new RunableTask());
+//        threadPoolExecutor.execute(new RunableTask());
+//        threadPoolExecutor.execute(new RunableTask());
+//        threadPoolExecutor.execute(new RunableTask());
+//        threadPoolExecutor.execute(new RunableTask());
+//        threadPoolExecutor.execute(new RunableTask());
 
 
     }

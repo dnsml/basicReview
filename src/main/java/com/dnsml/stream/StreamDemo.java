@@ -38,7 +38,10 @@ public class StreamDemo {
 
 
 //        map转换 Todo
-        users.stream().map(user->user.getAge().toString()).forEach(System.out::println);
+        Set<Integer> userSet= users.stream().map(User::getAge).collect(Collectors.toSet());
+
+
+
 
     }
 
